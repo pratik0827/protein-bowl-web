@@ -94,7 +94,7 @@ export default function ProteinBowlShowcase() {
   const whatsappBase = "https://wa.me/?text=Hi%20Protein%20Bowl!%20I%20want%20to%20order%20the%20";
 
   return (
-    <main className="w-full min-h-screen bg-[#080808] text-[#EDEDED] font-sans antialiased overflow-x-hidden selection:bg-white selection:text-black">
+    <main className="w-full min-h-screen bg-[#080808] text-[#EDEDED] font-sans antialiased overflow-x-hidden selection:bg-white selection:text-black pb-20 md:pb-0">
 
       {/* 1. FLOATING TITANIUM FROSTED NAVBAR */}
       <header className="fixed top-0 inset-x-0 z-50 bg-[#080808]/90 backdrop-blur-2xl border-b border-white/10 px-6 lg:px-16 py-4 transition-all">
@@ -189,8 +189,8 @@ export default function ProteinBowlShowcase() {
           </div>
 
           {/* Right Column: Hero Bowl Visual with Dynamic Floating Hologram Pills */}
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] flex items-center justify-center">
+          <div className="lg:col-span-5 relative flex items-center justify-center mt-8 lg:mt-0">
+            <div className="relative w-64 h-64 sm:w-[480px] sm:h-[480px] flex items-center justify-center">
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -581,6 +581,19 @@ export default function ProteinBowlShowcase() {
           <a href="#location" className="hover:text-white transition-colors">LOCATION</a>
         </div>
       </footer>
+
+      {/* 8. FIXED MOBILE BOTTOM ORDER BAR (High-Converting Mobile UX) */}
+      <div className="sm:hidden fixed bottom-3 inset-x-3 z-50">
+        <a
+          href="https://wa.me/?text=Hi%20Protein%20Bowl!%20I%20want%20to%20order."
+          target="_blank"
+          rel="noreferrer"
+          className="w-full py-3.5 px-6 rounded-full bg-white text-black font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(0,0,0,0.9)] active:scale-95 border border-white/20"
+        >
+          <MessageCircle className="w-4 h-4" />
+          <span>Quick WhatsApp Order</span>
+        </a>
+      </div>
 
     </main>
   );
